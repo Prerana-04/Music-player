@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+    }
+
+    .app-header {
+      background-color: #1DB954;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .app-header h1 {
+      margin: 0;
+    }
+
+    .songs-list {
+      padding: 20px;
+    }
+
+    .songs-list h2 {
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .songs-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .songs-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    .songs-list .song-info span {
+      font-weight: bold;
+    }
+
+    .songs-list button {
+      padding: 5px 10px;
+      background-color: #1DB954;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .songs-list button:hover {
+      background-color: #14863D;
+    }
+
+    .current-song {
+      padding: 20px;
+      background-color: #181818;
+      margin-top: 20px;
+    }
+
+    .current-song h3 {
+      margin-top: 0;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Spotify Clone</h1>
+    </header>
+
+    <main>
+      <div class="songs-list">
+        <h2>Available Songs</h2>
+        <ul>
+          <li>
+            <div class="song-info">
+              <span>Sample Song</span> - <span>Sample Artist</span>
+            </div>
+            <button onclick="playSong('sample.mp3')">Play</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="current-song">
+        <h3>Now Playing</h3>
+        <p>
+          Sample Song by Sample Artist
+        </p>
+        <audio controls>
+          <source src="sample.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function playSong(songUrl) {
+      const audio = document.querySelector('audio');
+      audio.src = songUrl;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
